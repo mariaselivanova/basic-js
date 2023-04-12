@@ -17,9 +17,9 @@ function deleteDigit(integer) {
   for (let i = 0; i < numToStr.length; i++) {
     const newStr = numToStr.slice(0, i) + numToStr.slice(i + 1);
     const newNum = +newStr;
-     if (newNum > maxNum) {
+    if (newNum > maxNum) {
       maxNum = newNum
-     }
+    }
   }
   return maxNum
 }
