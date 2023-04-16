@@ -20,9 +20,9 @@ function createDreamTeam(members) {
   let str = '';
   for (let i = 0; i < members.length; i++) {
     if (typeof members[i] === "string") {
-      let trimmedName = members[i].trim();
-      if (trimmedName.length > 0) {
-        str += trimmedName.charAt(0).toUpperCase();
+      let name = members[i].trim();
+      if (name.length > 0) {
+        str += name.charAt(0).toUpperCase();
       }
     }
   }
