@@ -13,17 +13,20 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 class DepthCalculator {
-  
+  constructor() {
+    this.initialDepth = 1;
+  }
+
   calculateDepth(arr) {
     if (!(arr instanceof Array)) {
       throw new Error("'arr' parameter must be an instance of the Array!");
     }
-    let initialDepth = 1;
+    let initialDepth = this.initialDepth;
     for (let i = 0; i < arr.length; i++) {
       if (arr[i] instanceof Array) {
         const depth = this.calculateDepth(arr[i]) + 1;
         if (depth > initialDepth) {
-          initialDepth = depth
+          initialDepth = depth;
         }
       }
     }
@@ -31,6 +34,7 @@ class DepthCalculator {
     return initialDepth;
   }
 }
+
 
 module.exports = {
   DepthCalculator
